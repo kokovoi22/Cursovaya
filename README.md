@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # ImGui-DirectX-11-Kiero-Hook
+=======
+# Cursovaya
+Cursovaya
+>>>>>>> 7e77cbcbcd8c5877ee6bb1907c646f91fe7f6a55
 Universal ImGui implementation through DirectX 11 Hook (kiero)
 <h1>Setting up the solution</h1>
 <ul>
