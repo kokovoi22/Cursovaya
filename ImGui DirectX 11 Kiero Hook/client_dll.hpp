@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2026-03-20 16:22:56.990179400 UTC
+// 2026-04-07 15:26:45.705207500 UTC
 
 #pragma once
 
@@ -2917,7 +2917,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_pKeyframe = 0x8; // C_RopeKeyframe*
             }
             // Parent: C_PointEntity
-            // Field count: 5
+            // Field count: 5f
             namespace CInfoDynamicShadowHint {
                 constexpr std::ptrdiff_t m_bDisabled = 0x608; // bool
                 constexpr std::ptrdiff_t m_flRange = 0x60C; // float32
@@ -2930,7 +2930,7 @@ namespace cs2_dumper {
             //
             // Metadata:
             // NetworkVarNames: m_vInTangentLocal (Vector)
-            // NetworkVarNames: m_vOutTangentLocal (Vector)
+            // NetworkVarNames: m_vOutTangentf (Vector)
             // NetworkVarNames: m_strParentPathUniqueID (CUtlString)
             // NetworkVarNames: m_strPathNodeParameter (CUtlString)
             namespace CPathNode {

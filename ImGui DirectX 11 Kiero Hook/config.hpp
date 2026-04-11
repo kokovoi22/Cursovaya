@@ -22,7 +22,6 @@ struct Config {
   VisualsTeam team;
   VisualsEnemy enemy;
   VisualsLocal local;
-  int visuals_subtab = 0;
   bool bhop = false;
   bool anti_flash = false;
 };

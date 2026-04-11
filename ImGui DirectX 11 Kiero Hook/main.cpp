@@ -12,7 +12,7 @@ WNDPROC oWndProc;
 ID3D11Device* pDevice = NULL;
 ID3D11DeviceContext* pContext = NULL;
 ID3D11RenderTargetView* mainRenderTargetView;
-
+int visuals_subtab = 0;
 bool g_menu_open = false;
 
 void InitImGui() {
@@ -92,16 +92,16 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
         if (current_tab == 0) {
             ImGui::BeginChild("##visuals_subtabs", ImVec2(0, 30), false, ImGuiWindowFlags_NoScrollbar);
-            if (ImGui::Button("Team")) g_config.visuals_subtab = 0;
+            if (ImGui::Button("Team")) visuals_subtab = 0;
             ImGui::SameLine();
-            if (ImGui::Button("Enemy")) g_config.visuals_subtab = 1;
+            if (ImGui::Button("Enemy")) visuals_subtab = 1;
             ImGui::SameLine();
-            if (ImGui::Button("Local")) g_config.visuals_subtab = 2;
+            if (ImGui::Button("Local")) visuals_subtab = 2;
             ImGui::EndChild();
 
             ImGui::Separator();
 
-            if (g_config.visuals_subtab == 0) {
+            if (visuals_subtab == 0) {
                 ImGui::Checkbox("Glow", &g_config.team.glow);
                 if (ImGui::IsItemClicked(1)) ImGui::OpenPopup("TeamGlowColor");
                 if (ImGui::BeginPopup("TeamGlowColor")) {
@@ -110,7 +110,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                     ImGui::EndPopup();
                 }
             }
-            else if (g_config.visuals_subtab == 1) {
+            else if (visuals_subtab == 1) {
                 ImGui::Checkbox("Glow", &g_config.enemy.glow);
                 if (ImGui::IsItemClicked(1)) ImGui::OpenPopup("EnemyGlowColor");
                 if (ImGui::BeginPopup("EnemyGlowColor")) {
@@ -119,7 +119,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                     ImGui::EndPopup();
                 }
             }
-            else if (g_config.visuals_subtab == 2) {
+            else if (visuals_subtab == 2) {
                 ImGui::Checkbox("FOV Changer", &g_config.local.fov_changer);
                 if (ImGui::IsItemClicked(1)) ImGui::OpenPopup("FOVSlider");
                 if (ImGui::BeginPopup("FOVSlider")) {

@@ -24,7 +24,7 @@ static void ApplyGlow(uint64_t playerPawn, bool enable, uint32_t color) {
 }
 
 void Visuals::ApplyTeamGlow() {
-    uint64_t client = (uint64_t)GetModuleHandleA("client.dll");
+    uint64_t client = (uint64_t)GetModuleHandle("client.dll");
     uint64_t entityList = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwEntityList);
     uint64_t localPawn = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
     if (!client || !entityList || !localPawn) return;
@@ -59,7 +59,7 @@ void Visuals::ApplyTeamGlow() {
 }
 
 void Visuals::ApplyEnemyGlow() {
-    uint64_t client = (uint64_t)GetModuleHandleA("client.dll");
+    uint64_t client = (uint64_t)GetModuleHandle("client.dll");
     uint64_t entityList = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwEntityList);
     uint64_t localPawn = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
     if (!client || !entityList || !localPawn) return;
@@ -94,7 +94,7 @@ void Visuals::ApplyEnemyGlow() {
 }
 
 void Visuals::FovChange() {
-    uint64_t client = (uint64_t)GetModuleHandleA("client.dll");
+    uint64_t client = (uint64_t)GetModuleHandle("client.dll");
     if (!client) return;
 
     uint64_t localPawn = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
@@ -125,7 +125,7 @@ void Visuals::FovChange() {
 }
 
 void Visuals::AntiFlash() {
-    uint64_t client = (uint64_t)GetModuleHandleA("client.dll");
+    uint64_t client = (uint64_t)GetModuleHandle("client.dll");
     if (!client) return;
 
     uint64_t localPawn = *(uint64_t*)(client + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
